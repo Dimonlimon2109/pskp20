@@ -1,9 +1,12 @@
 document.querySelectorAll(".contact_button").forEach((button) => {
   button.addEventListener("click", function () {
     const buttonText = this.textContent;
-
     const name = buttonText.split(" - ")[0].trim();
+    console.log(buttonText);
+    console.log(name);
     const phone = buttonText.split(" - ")[1].trim();
+    console.log(buttonText);
+    console.log(name);
 
     const params = new URLSearchParams({ name, phone }).toString();
 

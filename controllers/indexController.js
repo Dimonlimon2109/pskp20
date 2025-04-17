@@ -2,21 +2,22 @@ const data = require("../data");
 
 exports.getList = (req, res) => {
     const contacts = data.map((d) => `${d.name} - ${d.phone}`);
-
+    console.log('getList', contacts);
     res.render("all.handlebars", { contacts });
 }
 
 exports.getAdd = (req, res) => {
     const contacts = data.map((d) => `${d.name} - ${d.phone}`);
-
+    console.log('getAdd',contacts);
     res.render("add.handlebars", { contacts, isContactsBlocked: true });
 }
 
 exports.getUpdate = (req, res) => {
     const name = req.query.name;
     const phone = req.query.phone;
+    console.log('GetUpd', phone);
     const contacts = data.map((d) => `${d.name} - ${d.phone}`);
-
+    console.log(phone);
     res.render("update.handlebars", {
       contacts,
       isContactsBlocked: true,
@@ -28,7 +29,7 @@ exports.getUpdate = (req, res) => {
 exports.addContact = (req, res) => {
     const name = req.body.name;
     const phone = req.body.phone;
-
+    console.log('AddContact', phone);
     data.push({ name, phone });
 
     const contacts = data.map((d) => `${d.name} - ${d.phone}`);
