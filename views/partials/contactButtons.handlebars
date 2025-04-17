@@ -1,0 +1,8 @@
+{{#each contacts}}
+  <button class="contact_button" 
+    {{#if ../isContactsBlocked}}
+      disabled
+    {{/if}}>
+    {{this}}
+  </button>  
+{{/each}}
